@@ -22,8 +22,8 @@ export default function Footer() {
         </div>
         <div>
           <ul className='py-20 flex flex-col justify-around'>
-            <li>Social Media</li>
-            <li>
+            <li className='pb-3'>Social Media</li>
+            <li className='pb-3'>
               <a
                 href='https://www.facebook.com/littlelemon'
                 target='_blank'
@@ -32,7 +32,7 @@ export default function Footer() {
                 Facebook
               </a>
             </li>
-            <li>
+            <li className='pb-3'>
   
               <a
                 href='https://www.instagram.com/littlelemon'
