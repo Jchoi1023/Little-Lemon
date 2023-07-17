@@ -4,7 +4,7 @@ import { MdDeliveryDining } from 'react-icons/md';
 
 export default function FoodCard({ name, description, imageSrc, price }) {
   return (
-    <VStack className='w-96 bg-[#D9D9D9] rounded-t-lg font-serif'>
+    <VStack className='w-96 bg-[#D9D9D9] rounded-t-lg font-serif m-5'>
       <Image src={imageSrc} alt={name} className='w-full h-80 rounded-t-lg' />
       <div
         className='flex flex-col justify-between h-52 p-3'

@@ -19,7 +19,7 @@ export default function Main() {
           <Link to='/reservations'>Reserve a Table</Link>
         </button>
       </div>
-      <div className=''>
+      <div className='max-md:hidden'>
         <img src={food} alt='food' className='w-96 h-96 rounded-lg'/>
       </div>
     </div>

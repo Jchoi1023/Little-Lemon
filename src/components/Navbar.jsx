@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from '../assets/image/logo-navbar.png';
 import { Link } from 'react-router-dom';
-import { GiHamburgerMenu } from 'react-icons/gi';
+// import { GiHamburgerMenu } from 'react-icons/gi';
+import {FaBars} from 'react-icons/fa';
+import {HiBars3} from 'react-icons/hi';
+import {LiaBarsSolid} from 'react-icons/lia';
 
 export default function Navbar() {
   // const [show, setShow]
@@ -10,9 +13,9 @@ export default function Navbar() {
       <Link to='/'>
         <img src={logo} className='w-60'/>
       </Link>
-      <div className='self-center w-10 md:hidden'>
-        <GiHamburgerMenu className='self-center' />
-      </div>
+      <button className='self-center pr-5 md:hidden'>
+        <LiaBarsSolid className='self-center w-12 h-12' />
+      </button>
       <div className='flex w-full justify-around max-md:hidden'>
         <Link to='/about' className='self-center'>
           About

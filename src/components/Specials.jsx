@@ -27,9 +27,9 @@ const specials = [
 
 export default function Specials() {
   return (
-    <div className='p-20 bg-[#EDEFEE]'>
-      <p className='pl-20 pb-10 text-4xl font-bold'>This weeks specials!</p>
-      <div className='flex justify-around'>
+    <div className='p-10 bg-[#EDEFEE]'>
+      <p className='pb-10 text-5xl text-center font-bold'>This weeks specials!</p>
+      <div className='flex justify-around max-md:block'>
         {specials.map((special) => (
           <FoodCard
             key={special.title}
