@@ -1,9 +1,10 @@
 import React from 'react';
+import Chicago from '../components/Chicago';
 
 export default function About() {
     return (
-        <div>
-            <p>about</p>
+        <div className='bg-[#EDEFEE] flex-1'>
+           <Chicago className='flex-1'/>
         </div>
     );
 }

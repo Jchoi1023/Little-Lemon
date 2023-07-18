@@ -4,7 +4,7 @@ import image2 from '../assets/image/chicago/images2.jpeg';
 
 export default function Chicago() {
   return (
-    <section className='flex p-28 font-serif'>
+    <section className='flex p-28 font-serif py-64'>
       <div className='flex flex-col w-1/2'>
         <p className='text-[#495E57] font-bold text-5xl  '>Little Lemon</p>
         <p className='py-3 text-3xl text-[#EE9972]'>Chicago</p>
