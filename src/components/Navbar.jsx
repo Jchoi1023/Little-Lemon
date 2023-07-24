@@ -1,9 +1,6 @@
 import React from 'react';
 import logo from '../assets/image/logo-navbar.png';
 import { Link } from 'react-router-dom';
-// import { GiHamburgerMenu } from 'react-icons/gi';
-import {FaBars} from 'react-icons/fa';
-import {HiBars3} from 'react-icons/hi';
 import {LiaBarsSolid} from 'react-icons/lia';
 
 export default function Navbar() {
