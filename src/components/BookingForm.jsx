@@ -1,7 +1,24 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+const options = [' ', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'];
+const occations = [' ', 'Anniversary', 'Birthday'];
 
 export default function BookingForm() {
+  const [bookingDate, setBookingDate] = useState('');
+  const [bookingTime, setBookingTime] = useState('');
+  const [number, setNumber] = useState('0');
+  const [occation, setOccation] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/confirmation', {state: bookingDate, bookingTime, number, occation});
+    // setBookingDate('');
+    // setBookingTime('');
+    // setNumber('');
+    // setOccation('');
+  };
 
   return (
     <section className='m-auto w-3/12 p-12 flex flex-col space-between'>
@@ -11,7 +28,7 @@ export default function BookingForm() {
       <span className='text-center pb-10 text-3xl font-serif text-[#EDEFEE] font-bold'>
         FIND A TABLE
       </span>
-      <form className=''>
+      <form onSubmit={handleSubmit}>
         <fieldset className='flex flex-col italic h-2/4'>
           <label className='text-white pb-2' htmlFor='date'>
             Date:{' '}
@@ -20,17 +37,23 @@ export default function BookingForm() {
             type='date'
             id='date'
             className='bg-slate-200 rounded-lg h-12 p-2'
+            value={bookingDate}
+            onChange={(e) => setBookingDate(e.target.value)}
           />
+
           <label className='text-white pb-2 pt-5' htmlFor='time'>
             Choose Time:{' '}
           </label>
-          <select id='time' className='bg-slate-200 rounded-lg h-12 p-2'>
-            <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option>
+          <select
+            value={bookingTime}
+            onChange={(e) => setBookingTime(e.target.value)}
+            className='bg-slate-200 rounded-lg h-12 p-2'
+          >
+            {options.map((value) => (
+              <option value={value} key={value}>
+                {value}
+              </option>
+            ))}
           </select>
           <label htmlFor='guests' className='text-white pb-2 pt-5'>
             Number of guests
@@ -41,24 +64,30 @@ export default function BookingForm() {
             min='1'
             max='10'
             id='guests'
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
             className='bg-slate-200 rounded-lg h-12 p-2'
           />
-          <label for='occasion' className='text-white pb-2 pt-5'>
+          <label htmlFor='occasion' className='text-white pb-2 pt-5'>
             Occasion
           </label>
-          <select id='occasion' className='bg-slate-200 rounded-lg h-12 p-2'>
-            <option>-</option>
-            <option>Birthday</option>
-            <option>Anniversary</option>
+          <select
+            value={occation}
+            onChange={(e) => setOccation(e.target.value)}
+            className='bg-slate-200 rounded-lg h-12 p-2'
+          >
+            {occations.map((value) => (
+              <option value={value} key={value}>
+                {value}
+              </option>
+            ))}
           </select>
-          {/* <input
+          <button
             type='submit'
-            value='Make Your reservation'
             className='mt-10 h-12 bg-[#F4CE14] rounded-lg font-bold'
-          /> */}
-          <Link className="mt-10 h-12 bg-[#F4CE14] rounded-lg font-bold flex items-center justify-center" to="/confirmation">
-          Make Your reservation
-        </Link>
+          >
+            Make Your Reservation
+          </button>       
         </fieldset>
       </form>
     </section>
