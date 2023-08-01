@@ -4,7 +4,7 @@ import restaurant from '../assets/image/restaurant.jpg';
 export default function Footer() {
   return (
     <section className='text-center text-sm p-10 bg-[#495E57] text-white font-bold'>
-      <div className='flex justify-around'>
+      <div className='flex justify-around max-md:flex-col'>
         <img src={restaurant} alt='restaurant' className='w-56 h-72' />
         <ul className='py-20 flex flex-col justify-around'>
           <li>About</li>
@@ -12,7 +12,7 @@ export default function Footer() {
           <li>Reservations</li>
           <li>Order Online</li>
         </ul>
-        <div className='flex items-center'>
+        <div className='flex items-center max-md:justify-center'>
           Little Lemon <br />
           331 E Chicago <br />
           LaSalle Street Chicago,

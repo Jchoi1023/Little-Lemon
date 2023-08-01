@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const options = [' ', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'];
+const options = [
+  ' ',
+  '17:00',
+  '17:30',
+  '18:00',
+  '18:30',
+  '19:00',
+  '19:30',
+  '20:00',
+];
 const occations = [' ', 'Anniversary', 'Birthday'];
 
 export default function BookingForm() {
@@ -9,11 +18,19 @@ export default function BookingForm() {
   const [bookingTime, setBookingTime] = useState('');
   const [number, setNumber] = useState('0');
   const [occation, setOccation] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/confirmation', {state: bookingDate, bookingTime, number, occation});
+    navigate('/confirmation', {
+      state: bookingDate,
+      bookingTime,
+      number,
+      occation,
+    });
     // setBookingDate('');
     // setBookingTime('');
     // setNumber('');
@@ -22,7 +39,7 @@ export default function BookingForm() {
 
   return (
     <section className='m-auto w-3/12 p-12 flex flex-col space-between'>
-      <span className='text-center p-5 text-5xl font-serif text-[#F4CE14] font-bold'>
+      <span className='text-center text-5xl font-serif text-[#F4CE14] font-bold'>
         Little Lemon
       </span>
       <span className='text-center pb-10 text-3xl font-serif text-[#EDEFEE] font-bold'>
@@ -30,6 +47,39 @@ export default function BookingForm() {
       </span>
       <form onSubmit={handleSubmit}>
         <fieldset className='flex flex-col italic h-2/4'>
+          <label htmlFor='firstName' className='text-white pb-2'>
+           First Name
+          </label>
+          <input
+            type='text'
+            placeholder='First Name'
+            id='firstName'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className='bg-slate-200 rounded-lg h-12 p-2'
+          />
+          <label htmlFor='LastName' className='text-white pb-2 pt-5'>
+           Last Name
+          </label>
+          <input
+            type='text'
+            placeholder='Last Name'
+            id='lastName'
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className='bg-slate-200 rounded-lg h-12 p-2'
+          />
+          <label htmlFor='email' className='text-white pb-2 pt-5'>
+            Eamil Address
+          </label>
+          <input
+            type='email'
+            placeholder='Email Address'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className='bg-slate-200 rounded-lg h-12 p-2'
+          />
           <label className='text-white pb-2' htmlFor='date'>
             Date:{' '}
           </label>
@@ -40,7 +90,6 @@ export default function BookingForm() {
             value={bookingDate}
             onChange={(e) => setBookingDate(e.target.value)}
           />
-
           <label className='text-white pb-2 pt-5' htmlFor='time'>
             Choose Time:{' '}
           </label>
@@ -68,7 +117,7 @@ export default function BookingForm() {
             onChange={(e) => setNumber(e.target.value)}
             className='bg-slate-200 rounded-lg h-12 p-2'
           />
-          <label htmlFor='occasion' className='text-white pb-2 pt-5'>
+          {/* <label htmlFor='occasion' className='text-white pb-2 pt-5'>
             Occasion
           </label>
           <select
@@ -81,13 +130,13 @@ export default function BookingForm() {
                 {value}
               </option>
             ))}
-          </select>
+          </select> */}
           <button
             type='submit'
             className='mt-10 h-12 bg-[#F4CE14] rounded-lg font-bold'
           >
             Make Your Reservation
-          </button>       
+          </button>
         </fieldset>
       </form>
     </section>

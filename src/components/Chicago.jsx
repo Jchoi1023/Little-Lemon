@@ -5,7 +5,7 @@ import image2 from '../assets/image/chicago/images2.jpeg';
 export default function Chicago() {
   return (
     <section className='flex p-28 font-serif py-64'>
-      <div className='flex flex-col w-1/2'>
+      <div className='flex flex-col w-1/2 max-md:flex-1'>
         <p className='text-[#495E57] font-bold text-5xl  '>Little Lemon</p>
         <p className='py-3 text-3xl text-[#EE9972]'>Chicago</p>
         <p className='text-2xl'>
@@ -19,7 +19,7 @@ export default function Chicago() {
           region.
         </p>
       </div>
-      <div className='w-1/2 pl-40'>
+      <div className='w-1/2 pl-40 max-md:hidden'>
         <img src={image1} alt='image1' className='w-96 h-96 absolute'/>
         <img src={image2} alt='image2' className='w-96 h-96 relative bottom-10 left-60'/>
       </div>

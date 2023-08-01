@@ -31,7 +31,7 @@ export default function CustomersSay() {
   return (
     <div className='p-20 bg-[#495E57]'>
       <p className='pb-20 text-5xl text-center text-[#F4CE14] font-bold'>What Our Customers Say!</p>
-      <div className='flex flex-row justify-around bg-[#FBDABB]'>
+      <div className='flex flex-row justify-around bg-[#FBDABB] max-md:flex-col'>
       {customers.map((customer) => (
         <ReviewCard
           name={customer.name}
