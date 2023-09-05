@@ -38,15 +38,15 @@ export default function BookingForm() {
   };
 
   return (
-    <section className='m-auto w-3/12 p-12 flex flex-col space-between'>
-      <span className='text-center text-5xl font-serif text-[#F4CE14] font-bold'>
+    <section className='m-auto p-5 flex flex-col space-between'>
+      <span className='text-center text-4xl font-serif text-[#F4CE14] font-bold'>
         Little Lemon
       </span>
-      <span className='text-center pb-10 text-3xl font-serif text-[#EDEFEE] font-bold'>
+      <span className='text-center pb-5 text-2xl font-serif text-[#EDEFEE] font-bold'>
         FIND A TABLE
       </span>
       <form onSubmit={handleSubmit}>
-        <fieldset className='flex flex-col italic h-2/4'>
+        <fieldset className='m-auto flex flex-col w-3/12 italic h-2/4'>
           <label htmlFor='firstName' className='text-white pb-2'>
            First Name
           </label>

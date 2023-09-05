@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Reservations from './pages/Reservations';
 import OrderOnline from './pages/OrderOnline';
 import Confirmation from './pages/Confirmation';
+import WriteReview from './pages/WriteReview';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/confirmation',
         element: <Confirmation />
+      },
+      {
+        path: '/writereview',
+        element: <WriteReview />
       }
     ]
   },

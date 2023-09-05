@@ -26,6 +26,9 @@ export default function Navbar() {
         <Link to='/orderonline' className='self-center'>
           Order Online
         </Link>
+        <Link to='/writereview' className='self-center'>
+         Write a Review
+        </Link>
       </div>
     </nav>
   );
