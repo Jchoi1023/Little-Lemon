@@ -105,7 +105,7 @@ export default function BookingForm() {
             ))}
           </select>
           <label htmlFor='guests' className='text-white pb-2 pt-5'>
-            Number of guests
+            Number of Guests
           </label>
           <input
             type='number'
